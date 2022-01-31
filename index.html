@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highway surfer</title>
+    <link rel="stylesheet" href="autosjatek_style.css">
+</head>
+<body>
+    <table style="margin: auto;">
+        <tr>
+            <td><canvas id="canvas" width="600" height="800"></canvas></td>
+            <td>
+                <p id="pontok">Pont: 0</p>
+                <p id="rekord">Rekord: 0</p>
+                <p id="history" onclick="elozmeny()">Korábbi pontok</p>
+                <div id="kormany">
+                    <div id="balra" onclick="balra()"></div>
+                    <div id="jobbra" onclick="jobbra()"></div>
+                </div>
+                <table style="border:none;">
+                    <tr>
+                        <td><img id="fekpedal" src="fekpedal.png" onmousedown="isdown = true; hatra()" onmouseup="isdown = false; hatra()"></td>
+                        <td><button style="margin:auto" id="start" onclick="start_gomb()">Start</button></td>
+                        <td><img id="gazpedal" src="gazpedal.png" onmousedown="isdown = true; elore()" onmouseup="isdown = false; elore()"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+
+    <div id="history_ki">
+        <div id="history_ki_inner">
+            <p>Korábbi pontok:</p>
+            <p id="kiiras"></p>
+            <button onclick="elozmeny()" id="history_ok">OK</button>
+        </div>
+    </div>
+    <img id="ut" src="ut3.png" style="display: none;">
+    <img id="maincar" src="maincar3.png" style="display:none">
+    <img id="akadaly" src="enemy.png" style="display:none">
+
+
+    <script src="autosjatek.js"></script>
+</body>
+</html>
