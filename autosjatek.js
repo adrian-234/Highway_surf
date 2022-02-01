@@ -122,7 +122,7 @@ function resetkormany() {                   //visszaállítja kormányt eredeti 
     document.getElementById("kormany").style.backgroundImage = "url('kormany.png')";
 }
 
-var isdown = false
+var isdown = false;
 function elore() {
     if (isdown == true && kordY > 0 && running == true) {
         kordY -= 3;
@@ -177,6 +177,25 @@ function start_gomb() {
     }
 }
 
-function test() {
-    document.getElementById("test").innerHTML = document.getElementById("canvas").offsetHeight * (-1);
+function bill_eloszto(event) {
+    if (event.code == "KeyA") {
+        balra();
+    } if (event.code == "KeyD") {
+        jobbra();
+    } if (event.code == "KeyW" && isdown == false) {
+        isdown = true;
+        elore();
+    } if (event.code == "KeyS" && isdown == false) {
+        isdown = true;
+        hatra();
+    }
+}
+function bill_eloszto_stop(event) {
+    if (event.code == "KeyW") {
+        isdown = false;
+        elore();
+    } if (event.code == "KeyS") {
+        isdown = false;
+        hatra();
+    }
 }
